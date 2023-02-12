@@ -1,12 +1,10 @@
 import express from "express";
 import cors from "cors";
-import { dummyTopicList, dummyTopicsData } from "./Data.js";
 import authRouter from "./controllers/auth.controller.js";
 import topicRouter from "./controllers/topic.controller.js";
 import topicDataRouter from "./controllers/topicData.controller.js";
 import { sequelize } from "./db/index.js";
-import "./db/index"
-
+import "./db/index";
 
 const PORT = 6000;
 const app = express();
@@ -29,7 +27,7 @@ app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
 
-const testconnection = async () => {
+const testConnection = async () => {
   try {
     await sequelize.authenticate();
     console.log("Connection has been established successfully.");
@@ -38,4 +36,4 @@ const testconnection = async () => {
   }
 };
 
-testconnection();
+testConnection();
